@@ -41,6 +41,28 @@ while true {
     }
 }
  */
+
+    // მეორე ვერსია - ბეჭდავს ბურთებს ჰორიზონტალურად, სავარაუდოდ ბაქარის იდეა
+/*
+var trafficLight = "🔴"
+
+while true {
+    switch trafficLight {
+    case "🔴":
+        print("\(trafficLight)->", terminator: "")
+        trafficLight = "🟡"
+    case "🟡":
+        print("\(trafficLight)->", terminator: "")
+        trafficLight = "🟢"
+    case "🟢":
+        print("\(trafficLight)->", terminator: "")
+        trafficLight = "🔴"
+    default:
+        break
+    }
+}
+*/
+
 //: ### ✅ 4. Taylor Swift-ის კონცერტის ბილეთები იყიდება, თუმცა რაოდენობა ძალიან შეზღუდულია. While loop-ის მეშვეობით შექმენით ბილეთების გაყიდვის სიმულაცია და ყოველ გაყიდულ ბილეთზე დაბეჭდეთ “ბილეთი გაყიდულია, დარჩენილია მხოლოდ X რაოდენობა”, მანამ სანამ ბილეთების რაოდენობა მიაღწევს 0-ს, რის შემდეგაც ბეჭდავთ - “ყველა ბილეთი გაყიდულია გელოდებით კონცერტზე”
 var availableTickets = 33
 print("🆘 იყიდება Taylor Swift-ის კონცერტის \(availableTickets) ბილეთი! 🆘")
