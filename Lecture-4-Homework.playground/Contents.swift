@@ -74,27 +74,25 @@ while availableTickets > 1 {
 print("ყველა ბილეთი გაყიდულია, გელოდებით კონცერტზე")
 //: ### ✅ 5. შექმენით array, შეავსეთ ისინი ელემენტებით. შეამოწმეთ და დაბეჭდეთ: "array-ში ყველა ელემენტი განსხვავებულია" ან "array შეიცავს მსგავს ელემენტებს"  (array-ს ტიპს არაქვს მნიშვნელობა.)
     // თუ ვიგულისხმებთ რომ მასივი ჰომოგენურია, მარტივი მეთოდი მნიშვნელობების შესადარებლად -->
-var arr = [1, 2, 2, 3, 3, 4]
+var arr = [1, 2, 3, 4]
 let firstEl = arr.first
 
 var isSimilar = true;
 
-//for el in arr {
-//    if el != firstEl {
-//        isSimilar = false
-//        break
-//    }
-//}
-//
-//if isSimilar {
-//    print("array შეიცავს მსგავს ელემენტებს.")
-//} else {
-//    print("array-ში ყველა ელემენტი განსხვავებულია.")
-//}
+for el in arr {
+    if el != firstEl {
+        isSimilar = false
+        break
+    }
+}
+
+if isSimilar {
+    print("array შეიცავს მსგავს ელემენტებს.")
+} else {
+    print("array-ში ყველა ელემენტი განსხვავებულია.")
+}
 
 
-//var arr9 = [1, 1, 1, 1, 1]
-//var arr10 = [1, 2, 2, 3, 4, 4]
     // კიდევ უფრო ბეისიქ მეთოდი nested ლუპების გამოყენებით
 for i in 0..<arr.count {
     for j in (i + 1)..<arr.count {
