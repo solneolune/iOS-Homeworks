@@ -1,6 +1,4 @@
 import Foundation
-
-
 //: # Main Tasks
 //: ### ✅ 1. დაწერეთ ფუნქცია რომელიც პარამეტრად მიიღებს String-ს და დააბრუნებს ბულიანს. ფუნქციამ უნდა შეამოწმოს მიღებული სტრინგი სარკისებურია თუ არა (სიტყვა ან წინადადება რომელიც იკითხება ერთნაირად როგორც თავიდან, ისე ბოლოდან მაგ: “ანა”, “აირევი ივერია”, “მადამ”)
 
@@ -35,6 +33,7 @@ func squareNums(_ arr: [Int]) -> [Int] {
         squaredNum = num * num
         squaredArr.append(squaredNum)
     }
+    
     print("მასივი \(arr)-ის ელემენტების კვადრატში აყვანისას მიიღება მასივი --> \(squaredArr)")
     return squaredArr
 }
@@ -46,7 +45,7 @@ squareNums([1, 2, 3, 4, 5])
 //: ### ✅ 3. დაწერეთ Closure რომელიც გაფილტრავს ლუწ რიცხვებს Int-ების Array-დან.
 
 let filterEvenNum = { (_ arr: [Int]) -> [Int] in
-    return arr.filter { $0 % 2 == 0}
+    return arr.filter { $0 % 2 == 0 }
 }
 
 print(filterEvenNum([1, 2, 3, 4, 5, 6]))
@@ -78,9 +77,11 @@ findSum(arr: intArr, closure: sumOfIntArr)
 
 //: ### ✅ 5. შექმენით  კონტაქტების Dict სადაც key არის სახელი და value ტელეფონის ნომერი, დაამატეთ, დაბეჭდეთ/მოძებნეთ და წაშალეთ კონტაქტი
 
-var contacts: [String: Int] = ["პირველი ბარბარე": 596336699,
-                "მეორე ბარბარე": 596663399,
-                "მესამე ბარბარე": 596993366]
+var contacts: [String: Int] = [
+    "პირველი ბარბარე": 596336699,
+    "მეორე ბარბარე": 596663399,
+    "მესამე ბარბარე": 596993366
+]
 
     // დამატება
 func addContact(_ name: String, _ phoneNumber: Int) {
@@ -89,7 +90,7 @@ func addContact(_ name: String, _ phoneNumber: Int) {
 
     // დაბეჭდვა
 func findContact(_ name: String) {
-    if let phoneNum = contacts[name]{
+    if let phoneNum = contacts[name] {
         print("\(name) : \(phoneNum)")
     } else {
         print("\(name) ვერ მოიძებნა.")
@@ -98,7 +99,7 @@ func findContact(_ name: String) {
 
     //წაშლა
 func deleteContact(_ name: String) {
-    if let phoneNum = contacts[name]{
+    if let phoneNum = contacts[name] {
         contacts.removeValue(forKey: name)
     } else {
         print("\(name) ვერ მოიძებნა.")
@@ -158,6 +159,7 @@ let songDurationsArr = Array(lelaWhatMovementIsThis.values)
 //: ✅ 1. დაწერეთ ფუნქცია რომელიც გამოითვლის და დაბეჭდავს სიღერების ჯამურ ხანგრძლივობას წუთებში და წამებში
 func findToTalTime(_ songDurations: [Int]) -> Int {
     var totalTime = 0
+    
     for time in songDurations {
         totalTime += time
     }
@@ -172,7 +174,6 @@ func findToTalTime(_ songDurations: [Int]) -> Int {
 findToTalTime(songDurationsArr)
 //: ✅ 2. დაწერეთ ფუნქცია რომელიც იპოვის და დაბეჭდავს ყველაზე ხანგრძლივი და ხანმოკლე სიმღერის სახელს.
 func findShortestAndLongest(_ album: [String: Int]) {
-    
     guard let firstSong = album.first else {
         return
     }
@@ -187,6 +188,7 @@ func findShortestAndLongest(_ album: [String: Int]) {
             shortestSong = (title, time)
         }
     }
+    
     print("ალბომში ყველაზე გრძელი სიმღერაა - \(longestSong.key), ხოლო ყველაზე მოკლე - \(shortestSong.key).")
 }
 
