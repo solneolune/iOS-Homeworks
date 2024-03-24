@@ -310,3 +310,21 @@ quotes.addQuote("ძილის წინ ილოცე დეზდემო
 print(quotes.quotes.count)
 quotes.removeQuote("მზე აღარ ამოდის ჩაგვიჭრეს")
 print(quotes.quotes.count)
+
+
+
+
+
+    // quotes.quotes.count-სა და მსგავს წვდომებში ამდენი quotes-ის არსებობა დამაბნეველია, თუმცა სხვა იდეალურად შესაბამისი სიტყვა ამ კონკრეტული ქეისისთვის სამწუხაროდ არ მოგვეპოვება ინგლისურ ენაში
+
+let sociallyProhibitedQuotesWhichIfUsedEqualSocialDeathAndOstracism = quoteGenerator()
+
+for quote in quotesToAdd {
+    sociallyProhibitedQuotesWhichIfUsedEqualSocialDeathAndOstracism.addQuote(quote)
+}
+
+sociallyProhibitedQuotesWhichIfUsedEqualSocialDeathAndOstracism.getRandomQuote()
+
+print(sociallyProhibitedQuotesWhichIfUsedEqualSocialDeathAndOstracism.quotes.count)
+sociallyProhibitedQuotesWhichIfUsedEqualSocialDeathAndOstracism.removeQuote("მზე აღარ ამოდის ჩაგვიჭრეს")
+print(sociallyProhibitedQuotesWhichIfUsedEqualSocialDeathAndOstracism.quotes.count)
