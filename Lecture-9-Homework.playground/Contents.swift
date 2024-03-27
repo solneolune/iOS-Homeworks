@@ -185,6 +185,6 @@ func compareSwiftness<T: SuperBeing>(_ firstSuperHero: T, _ secondSuperHero: T) 
 }
 
 let lexseni = SuperHero(name: "ლექსსსსსენი", strength: 100, speed: 100, weakness: "არ აქვს", gender: Gender.Male)
-let drake = SuperHero(name: "დრეიკი", strength: 0, speed: 0, weakness: "ჩვენ ლექსოს ვერ სჯობს", gender: Gender.Male)
+let drake = SuperHero(name: "დრეიკი", strength: 0, speed: 0, weakness: "ჩვენს ლექსოს ვერ სჯობს", gender: Gender.Male)
 
 compareSwiftness(lexseni, drake)
