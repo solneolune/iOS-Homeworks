@@ -200,7 +200,7 @@ class PoorStudent {
 }
 
 var barbarika = PoorStudent(challenge: "კვარტლის ბოლო")
-barbarika.traumaDump()
+barbarika.traumaDump() // 2
 
 
 /*
