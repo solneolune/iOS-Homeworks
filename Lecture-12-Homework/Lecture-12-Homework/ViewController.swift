@@ -6,6 +6,7 @@
 //
 //  📱 გატესტილია iPhone 15 სიმულატორში, გათვლილია iOS 17-ზე
 
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -17,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var calculateBtn: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     
-    // თემატური ცვლადები (თავდაპირველი მნიშვნელობების კოდში გაწერა ვამჯობინე)
+    
+    // 📦 თემატური ცვლადები (თავდაპირველი მნიშვნელობების კოდში გაწერა ვამჯობინე)
     let initTaskTitle = "უმცირესი საერთო ჯერადი"
     let initBtnTitle = "იპოვე უსჯ"
     let gcdThemeColor = UIColor.systemIndigo
@@ -29,15 +31,27 @@ class ViewController: UIViewController {
         initView()
     }
     
-    // View-ს მეთოდები
+    
+    // --------------------------------------
+    
+    // 🖼️ View-ს მეთოდები და პარამეტრები
     func initView() {
         loadLCMView()
-        calculateBtn.sizeToFit()
         switchTask.onTintColor = gcdThemeColor
         switchTask.tintColor = lcmThemeColor
         switchTask.subviews[0].subviews[0].backgroundColor = lcmThemeColor
         number1.placeholder = "შეიყვანე პირველი რიცხვი"
         number2.placeholder = "შეიყვანე მეორე რიცხვი"
+        number1.layer.cornerRadius = 5
+        number2.layer.cornerRadius = 5
+        number1.backgroundColor = .clear
+        number2.backgroundColor = .clear
+        number1.layer.borderWidth = 1
+        number2.layer.borderWidth = 1
+        number1.layer.borderColor = UIColor.systemGray.cgColor
+        number2.layer.borderColor = UIColor.systemGray.cgColor
+        calculateBtn.titleLabel?.font = UIFont(name: "...", size: CGFloat(12))
+
     }
     
     func loadGCDView() {
@@ -52,7 +66,11 @@ class ViewController: UIViewController {
         calculateBtn.tintColor = lcmThemeColor
     }
 
-    // Action მეთოდები
+
+    
+    // --------------------------------------
+    
+    // ☑️ ელემენტების Action მეთოდები
     @IBAction func changeTask(_ sender: UISwitch) {
         if sender.isOn {
             loadGCDView()
@@ -64,19 +82,33 @@ class ViewController: UIViewController {
     @IBAction func calculateResult(_ sender: UIButton) {
         guard let num1txt = number1.text,
               let num2txt = number2.text,
-        let num1 = Int(num1txt),
-        let num2 = Int(num2txt)
+              let num1 = Int(num1txt),
+              let num2 = Int(num2txt)
         else {
             resultLabel.textColor = .systemRed
             resultLabel.text = "ფორმატი არასწორია"
+            
+            // ვალიდაციამ სხვანაირად არ იმუშავა სუფთა ლოგიკით რომ წასულიყო ცალკე ლეიბლების დამატების გარეშე და არ ვიცოდი ამისი უფლება თუ მქონდა 5 მწკრივის შეზღუდვიდან გამომდინარე
+            number1.layer.borderWidth = 1
+            number2.layer.borderWidth = 1
+            number1.layer.borderColor = UIColor.systemRed.cgColor
+            number2.layer.borderColor = UIColor.systemRed.cgColor
             return
         }
         
         let result = switchTask.isOn ? findGCD(num1, num2) : findLCM(num1, num2)
         
+//        number1.layer.borderWidth = 0
+//        number2.layer.borderWidth = 0
+        number1.layer.borderColor = UIColor.systemGray.cgColor
+        number2.layer.borderColor = UIColor.systemGray.cgColor
         resultLabel.text = "პასუხი: \(result)"
         resultLabel.textColor = .systemGreen
     }
+    
+    
+    // --------------------------------------
+    // ⚙️ ცალკეული მეთოდები
     
     func findGCD(_ num1: Int, _ num2: Int) -> Int {
         let r = num1 % num2
