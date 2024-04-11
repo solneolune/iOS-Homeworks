@@ -104,6 +104,9 @@ class PolarSignVC: BaseVC {
     func styleImage() {
         polarSymbol.contentMode = .scaleAspectFit
         polarSymbol.translatesAutoresizingMaskIntoConstraints = false
+        let widthConstraint = NSLayoutConstraint(item: polarSymbol, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 300.0)
+        let heightConstraint = NSLayoutConstraint(item: polarSymbol, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 300.0)
+        polarSymbol.addConstraints([widthConstraint, heightConstraint])
     }
     
     func styleTitle() {

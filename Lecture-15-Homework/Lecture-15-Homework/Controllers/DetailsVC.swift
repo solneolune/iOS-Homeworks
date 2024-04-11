@@ -101,8 +101,13 @@ class DetailsVC: BaseVC {
     }
     
     func styleImage() {
-        signSymbol.frame.size = CGSize(width: 156, height: 156)
-        signSymbol.contentMode = .scaleAspectFit // ამას გავასწორებ რამენაირად
+//        signSymbol.frame.size = CGSize(width: 156, height: 156)
+        signSymbol.contentMode = .scaleAspectFit //
+        signSymbol.translatesAutoresizingMaskIntoConstraints = false
+
+        let widthConstraint = NSLayoutConstraint(item: signSymbol, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 156.0)
+        let heightConstraint = NSLayoutConstraint(item: signSymbol, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 156.0)
+        signSymbol.addConstraints([widthConstraint, heightConstraint])
     }
     
     func styleTitle() {
