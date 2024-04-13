@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03770F002BCA0F790010351C /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03770EFF2BCA0F790010351C /* ImageResizer.swift */; };
 		03E0587A2BC9B97C00D1D75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E058792BC9B97C00D1D75C /* AppDelegate.swift */; };
 		03E0587C2BC9B97C00D1D75C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0587B2BC9B97C00D1D75C /* SceneDelegate.swift */; };
 		03E0587E2BC9B97C00D1D75C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0587D2BC9B97C00D1D75C /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03770EFF2BCA0F790010351C /* ImageResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
 		03E058762BC9B97C00D1D75C /* Lecture-16-Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lecture-16-Homework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E058792BC9B97C00D1D75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03E0587B2BC9B97C00D1D75C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03770F012BCA11100010351C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03770EFF2BCA0F790010351C /* ImageResizer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		03872A492BC9E2930004038A /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 				03E058822BC9B97C00D1D75C /* Assets.xcassets */,
 				03E058842BC9B97C00D1D75C /* LaunchScreen.storyboard */,
 				03E058872BC9B97C00D1D75C /* Info.plist */,
+				03770F012BCA11100010351C /* Extensions */,
 			);
 			path = "Lecture-16-Homework";
 			sourceTree = "<group>";
@@ -169,6 +180,7 @@
 			files = (
 				03E0587E2BC9B97C00D1D75C /* ViewController.swift in Sources */,
 				03E058942BC9C41C00D1D75C /* DetailsVC.swift in Sources */,
+				03770F002BCA0F790010351C /* ImageResizer.swift in Sources */,
 				03E058912BC9BD0E00D1D75C /* Data.swift in Sources */,
 				03E0588F2BC9BCAE00D1D75C /* DataModel.swift in Sources */,
 				03E0587A2BC9B97C00D1D75C /* AppDelegate.swift in Sources */,

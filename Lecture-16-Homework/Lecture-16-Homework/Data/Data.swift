@@ -7,7 +7,7 @@
 
 import Foundation
 
-let contacts: [Contact] = [
+var contacts: [Contact] = [
     Contact(name: "nodar ghachava", age: 25, gender: .Male, hobby: "Bog snorkeling", icon: ""),
     Contact(name: "elene donadze", age: 30, gender: .Female, hobby: "Extreme ironing", icon: ""),
     Contact(name: "temuri chitashvili", age: 22, gender: .Male, hobby: "Chess boxing", icon: ""),
@@ -15,7 +15,6 @@ let contacts: [Contact] = [
     Contact(name: "tornike elkanashvili", age: 35, gender: .Male, hobby: "Wife carrying", icon: ""),
     Contact(name: "ana ioramashvili", age: 26, gender: .Female, hobby: "Quidditch", icon: ""),
     Contact(name: "nini bardavelidze", age: 20, gender: .Female, hobby: "Gnome hunting", icon: ""),
-    Contact(name: "barbare tepnadze", age: 31, gender: .Female, hobby: "Unicycle polo", icon: ""),
     Contact(name: "mariam sreseli", age: 27, gender: .Female, hobby: "Yarn bombing", icon: ""),
     Contact(name: "valeri mekhashishvili", age: 29, gender: .Male, hobby: "Worm charming", icon: ""),
     Contact(name: "zuka papuashvili", age: 24, gender: .Male, hobby: "Cheese rolling", icon: ""),

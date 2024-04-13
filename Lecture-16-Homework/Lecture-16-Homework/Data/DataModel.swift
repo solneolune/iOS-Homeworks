@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum Gender {
-    case Female
-    case Male
-    case Other
+enum Gender: String {
+    case Female = "female"
+    case Male = "male"
+    case Other = "other"
 }
 
 struct Contact {

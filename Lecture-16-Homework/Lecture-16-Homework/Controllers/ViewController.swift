@@ -18,19 +18,30 @@ class ViewController: UIViewController {
     
     // MARK: - ELEMENTS
     
-    
-    
     let tableView: UITableView = {
         let tableView = UITableView()
         return tableView
     }()
     
+    let iconImg: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "female.png")
+        return img
+    }()
     
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Barbare Tepnadze"
+        return label
+    }()
+    
+    var headerView = UIView()
     
     // MARK: - viewDidLoad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         initSetUp()
         
         navigationItem.title = "iOS"
@@ -41,7 +52,9 @@ class ViewController: UIViewController {
     
     // MARK: - SETUP AND STYLING
     func initSetUp() {
+        initData()
         initTable()
+        setUpTableViewHeader()
         view.addSubview(tableView)
         styleTable()
     }
@@ -51,6 +64,52 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         sectionTable()
+    }
+    
+    func setUpTableViewHeader() {
+        headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 80))
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.tableHeaderView = headerView
+        
+        styleIconImg()
+        styleNameLabel()
+
+        if let tableHeaderView = tableView.tableHeaderView {
+            tableHeaderView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                tableHeaderView.widthAnchor.constraint(equalTo: tableView.widthAnchor),
+                tableHeaderView.heightAnchor.constraint(equalToConstant: 80)
+            ])
+        }
+    }
+    
+    func styleIconImg() {
+        iconImg.translatesAutoresizingMaskIntoConstraints = false
+        iconImg.contentMode = .scaleAspectFill
+        iconImg.layer.cornerRadius = 30
+        iconImg.clipsToBounds = true
+        
+        headerView.addSubview(iconImg)
+        
+        NSLayoutConstraint.activate([
+            iconImg.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+            iconImg.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            iconImg.widthAnchor.constraint(equalToConstant: 60),
+            iconImg.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
+    
+    func styleNameLabel() {
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        
+        headerView.addSubview(nameLabel)
+        
+        NSLayoutConstraint.activate([
+            nameLabel.leadingAnchor.constraint(equalTo: iconImg.trailingAnchor, constant: 20),
+            nameLabel.centerYAnchor.constraint(equalTo: iconImg.centerYAnchor),
+            nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: headerView.trailingAnchor, constant: -20)
+        ])
     }
     
     func styleTable() {
@@ -63,7 +122,18 @@ class ViewController: UIViewController {
         ])
     }
     
-    
+    func initData() {
+        for i in 0..<contacts.count {
+            switch contacts[i].gender {
+            case .Female:
+                contacts[i].icon = "female.png"
+            case .Male:
+                contacts[i].icon = "male.png"
+            case .Other:
+                print("არაფერი")
+            }
+        }
+    }
     
     // MARK: - OTHER FUNCTIONS
     
@@ -122,4 +192,3 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 #Preview {
     ViewController()
 }
-
