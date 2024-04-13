@@ -157,10 +157,3 @@ class DetailsVC: UIViewController {
         }
     }
 }
-
-
-// MARK: - Preview
-#Preview {
-    DetailsVC()
-}
-

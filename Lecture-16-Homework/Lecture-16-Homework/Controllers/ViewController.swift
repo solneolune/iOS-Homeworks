@@ -37,6 +37,8 @@ class ViewController: UIViewController {
     
     var headerView = UIView()
     
+    
+    
     // MARK: - viewDidLoad()
     
     override func viewDidLoad() {
@@ -51,6 +53,7 @@ class ViewController: UIViewController {
     
     
     // MARK: - SETUP AND STYLING
+    
     func initSetUp() {
         initData()
         initTable()
@@ -186,9 +189,4 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             print("404 ვერ მოიძებნა")
         }
     }
-}
-
-
-#Preview {
-    ViewController()
 }
