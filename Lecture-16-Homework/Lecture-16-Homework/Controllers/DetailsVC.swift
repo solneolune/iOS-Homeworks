@@ -92,10 +92,6 @@ class DetailsVC: UIViewController {
         contactIcon.contentMode = .scaleAspectFill
         contactIcon.clipsToBounds = true
         contactIcon.layer.cornerRadius = 30
-//        if let img = UIImage(named: (data?.icon)!) {
-//            let resizedImg = img.resized(to: CGSize(width: 100, height: 100))
-//            contactIcon.image = resizedImg
-//        }
     }
     
     func styleNameLabel() {
