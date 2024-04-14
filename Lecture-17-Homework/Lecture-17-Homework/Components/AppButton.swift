@@ -26,7 +26,7 @@ class AppButton: UIButton {
     // MARK: - Styling
     func styleButton() {
         self.heightAnchor.constraint(equalToConstant: 46).isActive = true
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        self.titleLabel?.font = UIFont(name: "FiraGO-Medium", size: 16)
         self.setTitleColor(.white, for: .normal)
         self.layer.cornerRadius = 24
     }

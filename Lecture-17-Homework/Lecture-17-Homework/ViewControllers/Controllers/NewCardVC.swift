@@ -22,7 +22,8 @@ class NewCardVC: BaseVC {
     let titleInput = UITextField()
     let descriptionLabel = UILabel()
     let descriptionInput = UITextField()
-    let addButton = AppButton(title: "დამატება", color: UIColor(rgb: 0x009B10), width: 48)
+    let collectionLabel = UILabel()
+    let addButton = AppButton(title: "დამატება", color: UIColor(rgb: 0x009B10), width: 132)
     
     var iconsCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -60,17 +61,16 @@ class NewCardVC: BaseVC {
             titleInput,
             descriptionLabel,
             descriptionInput,
+            collectionLabel,
             iconsCollection
         ])
         stackView.axis = .vertical
         stackView.distribution = .fill
         let screenSize = UIScreen.main.bounds.size
-        let spacing = screenSize.width < 410 ? 8 : 18
-//        stackView.spacing = CGFloat(spacing)
-        stackView.spacing = 25
+        let spacing = screenSize.width < 410 ? 20 : 25
+        stackView.spacing = CGFloat(spacing)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
-        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -98,6 +98,7 @@ class NewCardVC: BaseVC {
     func initLabels() {
         styleLabel(titleLabel, text: "სათაური")
         styleLabel(descriptionLabel, text: "აღწერა")
+        styleLabel(collectionLabel, text: "აირჩიეთ აიქონი")
     }
     
     func initInputs() {
@@ -107,7 +108,7 @@ class NewCardVC: BaseVC {
     
     func styleLabel(_ label: UILabel, text: String) {
         label.text = text
-        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.font = UIFont(name: "FiraGO-SemiBold", size: 16)
         label.textColor = .white
     }
     
@@ -115,21 +116,22 @@ class NewCardVC: BaseVC {
         input.placeholder = placeholder
         input.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
             .foregroundColor: UIColor(rgb: 0x636363),
-            .font: UIFont.systemFont(ofSize: 12, weight: .medium)
+            .font: UIFont(name: "FiraGO-Medium", size: 12) ?? UIFont.systemFont(ofSize: 12, weight: .medium)
         ])
         input.textColor = .white
         input.backgroundColor = .clear
         input.layer.borderColor = UIColor(rgb: 0x8D8D8D).cgColor
         input.layer.borderWidth = 1.0
         input.layer.cornerRadius = 9
+        input.borderStyle = .roundedRect
         input.translatesAutoresizingMaskIntoConstraints = false
+        input.heightAnchor.constraint(equalToConstant: 45).isActive = true
     }
     
     func styleAddNewButton() {
         view.addSubview(addButton)
         NSLayoutConstraint.activate([
-            addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             addButton.heightAnchor.constraint(equalToConstant: 50)
         ])
@@ -155,6 +157,7 @@ class NewCardVC: BaseVC {
     
 }
 
+    // MARK: - Extensions
 extension NewCardVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Icon.allCases.count
@@ -179,8 +182,4 @@ extension NewCardVC: UICollectionViewDataSource {
 
 extension NewCardVC: UICollectionViewDelegate {
     
-}
-
-#Preview {
-    NewCardVC()
 }

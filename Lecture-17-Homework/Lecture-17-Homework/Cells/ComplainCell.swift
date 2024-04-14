@@ -44,28 +44,28 @@ class ComplainCell: UICollectionViewCell {
         iconImg.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(iconImg)
         NSLayoutConstraint.activate([
-            iconImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            iconImg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            iconImg.widthAnchor.constraint(equalToConstant: 40),
-            iconImg.heightAnchor.constraint(equalToConstant: 40),
+            iconImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            iconImg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            iconImg.widthAnchor.constraint(equalToConstant: 50),
+            iconImg.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
     func styleTitle() {
-        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        titleLabel.font = UIFont(name: "FiraGO-SemiBold", size: 16)
         titleLabel.textColor = .white
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: iconImg.bottomAnchor, constant: 5),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: iconImg.bottomAnchor, constant: 12),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
         ])
     }
     
     func styleDescription() {
-        descriptionLabel.font = UIFont.systemFont(ofSize: 10, weight: .medium)
+        descriptionLabel.font = UIFont(name: "FiraGO-Medium", size: 10)
         descriptionLabel.textColor = UIColor(rgb: 0x5E6272)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
@@ -73,7 +73,7 @@ class ComplainCell: UICollectionViewCell {
         addSubview(descriptionLabel)
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
     }

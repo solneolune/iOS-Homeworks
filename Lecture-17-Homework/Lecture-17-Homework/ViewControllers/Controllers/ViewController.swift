@@ -43,7 +43,6 @@ class ViewController: BaseVC {
     func initCollection() {
         cardsCollection.dataSource = self
         cardsCollection.delegate = self
-        
         view.addSubview(cardsCollection)
         NSLayoutConstraint.activate([
             cardsCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
@@ -51,7 +50,6 @@ class ViewController: BaseVC {
             cardsCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             cardsCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
         ])
-        
         cardsCollection.register(ComplainCell.self, forCellWithReuseIdentifier: "ComplainCell")
     }
     
@@ -99,15 +97,14 @@ class ViewController: BaseVC {
     }
 }
 
+    // MARK: - Extensions
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let complainCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComplainCell", for: indexPath) as! ComplainCell
         let card = complainCards[indexPath.item]
-        
         complainCell.iconImg.image = UIImage(named: card.icon.rawValue)
         complainCell.titleLabel.text = card.title
         complainCell.descriptionLabel.text = card.description
-        
         return complainCell
     }
     
@@ -125,9 +122,4 @@ extension ViewController: NewCardVCDelegate {
         complainCards.append(card)
         cardsCollection.reloadData()
     }
-}
-
-
-#Preview {
-    ViewController()
 }

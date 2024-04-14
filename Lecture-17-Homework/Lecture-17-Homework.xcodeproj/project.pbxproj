@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0302D92F2BCC648F00C4A3B1 /* FiraGO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D9202BCC648F00C4A3B1 /* FiraGO-Bold.ttf */; };
+		0302D9312BCC648F00C4A3B1 /* FiraGO-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D9222BCC648F00C4A3B1 /* FiraGO-SemiBold.ttf */; };
+		0302D9332BCC648F00C4A3B1 /* FiraGO-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D9242BCC648F00C4A3B1 /* FiraGO-ExtraLight.ttf */; };
+		0302D9362BCC648F00C4A3B1 /* FiraGO-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D9272BCC648F00C4A3B1 /* FiraGO-ExtraBold.ttf */; };
+		0302D9372BCC648F00C4A3B1 /* FiraGO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D9282BCC648F00C4A3B1 /* FiraGO-Regular.ttf */; };
+		0302D9392BCC648F00C4A3B1 /* FiraGO-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D92A2BCC648F00C4A3B1 /* FiraGO-Medium.ttf */; };
+		0302D93A2BCC648F00C4A3B1 /* FiraGO-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D92B2BCC648F00C4A3B1 /* FiraGO-Thin.ttf */; };
+		0302D93C2BCC648F00C4A3B1 /* FiraGO-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0302D92D2BCC648F00C4A3B1 /* FiraGO-UltraLight.ttf */; };
+		0302D93E2BCC6C4600C4A3B1 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0302D93D2BCC6C4600C4A3B1 /* UIFont.swift */; };
 		0305D0692BCB1F8000D3F92B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305D0682BCB1F8000D3F92B /* AppDelegate.swift */; };
 		0305D06B2BCB1F8000D3F92B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305D06A2BCB1F8000D3F92B /* SceneDelegate.swift */; };
 		0305D06D2BCB1F8000D3F92B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305D06C2BCB1F8000D3F92B /* ViewController.swift */; };
@@ -26,6 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0302D9202BCC648F00C4A3B1 /* FiraGO-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Bold.ttf"; sourceTree = "<group>"; };
+		0302D9222BCC648F00C4A3B1 /* FiraGO-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-SemiBold.ttf"; sourceTree = "<group>"; };
+		0302D9242BCC648F00C4A3B1 /* FiraGO-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-ExtraLight.ttf"; sourceTree = "<group>"; };
+		0302D9272BCC648F00C4A3B1 /* FiraGO-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0302D9282BCC648F00C4A3B1 /* FiraGO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Regular.ttf"; sourceTree = "<group>"; };
+		0302D92A2BCC648F00C4A3B1 /* FiraGO-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Medium.ttf"; sourceTree = "<group>"; };
+		0302D92B2BCC648F00C4A3B1 /* FiraGO-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Thin.ttf"; sourceTree = "<group>"; };
+		0302D92D2BCC648F00C4A3B1 /* FiraGO-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-UltraLight.ttf"; sourceTree = "<group>"; };
+		0302D93D2BCC6C4600C4A3B1 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0305D0652BCB1F8000D3F92B /* Lecture-17-Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lecture-17-Homework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0305D0682BCB1F8000D3F92B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0305D06A2BCB1F8000D3F92B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +75,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0302D91E2BCC61D200C4A3B1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0302D9202BCC648F00C4A3B1 /* FiraGO-Bold.ttf */,
+				0302D9272BCC648F00C4A3B1 /* FiraGO-ExtraBold.ttf */,
+				0302D9242BCC648F00C4A3B1 /* FiraGO-ExtraLight.ttf */,
+				0302D92A2BCC648F00C4A3B1 /* FiraGO-Medium.ttf */,
+				0302D9282BCC648F00C4A3B1 /* FiraGO-Regular.ttf */,
+				0302D9222BCC648F00C4A3B1 /* FiraGO-SemiBold.ttf */,
+				0302D92B2BCC648F00C4A3B1 /* FiraGO-Thin.ttf */,
+				0302D92D2BCC648F00C4A3B1 /* FiraGO-UltraLight.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0305D05C2BCB1F8000D3F92B = {
 			isa = PBXGroup;
 			children = (
@@ -77,15 +110,14 @@
 			isa = PBXGroup;
 			children = (
 				0305D07C2BCB202C00D3F92B /* App */,
-				0305D0802BCB215100D3F92B /* Extensions */,
-				0305D07D2BCB203A00D3F92B /* Controllers */,
-				0305D0712BCB1F8100D3F92B /* Assets.xcassets */,
-				0305D0732BCB1F8100D3F92B /* LaunchScreen.storyboard */,
-				0305D0762BCB1F8100D3F92B /* Info.plist */,
 				034E7FB92BCBFEFC00F3500C /* Models */,
-				034E7FBE2BCC010000F3500C /* Enums */,
+				03CB3EF22BCC5AA9009E7AD7 /* ViewControllers */,
+				033D9A462BCC5AF5001C9BF1 /* Cells */,
 				0305D08B2BCB5D9B00D3F92B /* Data */,
+				0305D0802BCB215100D3F92B /* Extensions */,
 				03CB3EEB2BCC0E89009E7AD7 /* Components */,
+				034E7FBE2BCC010000F3500C /* Enums */,
+				033D9A472BCC5B13001C9BF1 /* Resources */,
 			);
 			path = "Lecture-17-Homework";
 			sourceTree = "<group>";
@@ -115,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0305D0812BCB217D00D3F92B /* UIColor.swift */,
+				0302D93D2BCC6C4600C4A3B1 /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,6 +158,25 @@
 				0305D08C2BCB5DA500D3F92B /* Data.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		033D9A462BCC5AF5001C9BF1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				034E7FBF2BCC067B00F3500C /* ComplainCell.swift */,
+				03CB3EEE2BCC2C8B009E7AD7 /* IconCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		033D9A472BCC5B13001C9BF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0302D91E2BCC61D200C4A3B1 /* Fonts */,
+				0305D0762BCB1F8100D3F92B /* Info.plist */,
+				0305D0712BCB1F8100D3F92B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		034E7FB92BCBFEFC00F3500C /* Models */ = {
@@ -146,11 +198,26 @@
 		03CB3EEB2BCC0E89009E7AD7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				034E7FBF2BCC067B00F3500C /* ComplainCell.swift */,
 				03CB3EEC2BCC0EC6009E7AD7 /* AppButton.swift */,
-				03CB3EEE2BCC2C8B009E7AD7 /* IconCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		03CB3EF02BCC5A57009E7AD7 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				0305D0732BCB1F8100D3F92B /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		03CB3EF22BCC5AA9009E7AD7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0305D07D2BCB203A00D3F92B /* Controllers */,
+				03CB3EF02BCC5A57009E7AD7 /* Launch */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +278,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0302D92F2BCC648F00C4A3B1 /* FiraGO-Bold.ttf in Resources */,
+				0302D9332BCC648F00C4A3B1 /* FiraGO-ExtraLight.ttf in Resources */,
 				0305D0722BCB1F8100D3F92B /* Assets.xcassets in Resources */,
+				0302D93C2BCC648F00C4A3B1 /* FiraGO-UltraLight.ttf in Resources */,
+				0302D9372BCC648F00C4A3B1 /* FiraGO-Regular.ttf in Resources */,
+				0302D9362BCC648F00C4A3B1 /* FiraGO-ExtraBold.ttf in Resources */,
 				0305D0752BCB1F8100D3F92B /* Base in Resources */,
+				0302D9312BCC648F00C4A3B1 /* FiraGO-SemiBold.ttf in Resources */,
+				0302D93A2BCC648F00C4A3B1 /* FiraGO-Thin.ttf in Resources */,
+				0302D9392BCC648F00C4A3B1 /* FiraGO-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +306,7 @@
 				0305D0842BCB467100D3F92B /* OnboardingVC.swift in Sources */,
 				0305D0692BCB1F8000D3F92B /* AppDelegate.swift in Sources */,
 				0305D0882BCB47C100D3F92B /* LaunchScreenVC.swift in Sources */,
+				0302D93E2BCC6C4600C4A3B1 /* UIFont.swift in Sources */,
 				03CB3EEF2BCC2C8B009E7AD7 /* IconCell.swift in Sources */,
 				0305D06B2BCB1F8000D3F92B /* SceneDelegate.swift in Sources */,
 				03CB3EED2BCC0EC6009E7AD7 /* AppButton.swift in Sources */,
@@ -382,7 +458,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KAF94HHT28;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lecture-17-Homework/Info.plist";
+				INFOPLIST_FILE = "Lecture-17-Homework/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -409,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KAF94HHT28;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lecture-17-Homework/Info.plist";
+				INFOPLIST_FILE = "Lecture-17-Homework/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

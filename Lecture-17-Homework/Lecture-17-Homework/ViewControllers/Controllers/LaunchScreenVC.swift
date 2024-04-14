@@ -33,17 +33,13 @@ class LaunchScreenVC: BaseVC {
     func styleWelcomeText() {
         welcomeText.textAlignment = .center
         welcomeText.textColor = UIColor(rgb: 0xFFFFFF)
-        welcomeText.font = UIFont.preferredFont(forTextStyle: .title1)
+        welcomeText.font = UIFont(name: "FiraGO-Regular", size: 30)
         welcomeText.translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
     func addTextConstraints() {
         welcomeText.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         welcomeText.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-}
-
-#Preview {
-    LaunchScreenVC()
 }
 

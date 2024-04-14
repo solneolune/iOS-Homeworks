@@ -19,5 +19,16 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FiraGO-Bold.ttf</string>
+		<string>FiraGO-ExtraBold.ttf</string>
+		<string>FiraGO-ExtraLight.ttf</string>
+		<string>FiraGO-Medium.ttf</string>
+		<string>FiraGO-Regular.ttf</string>
+		<string>FiraGO-SemiBold.ttf</string>
+		<string>FiraGO-Thin.ttf</string>
+		<string>FiraGO-UltralLight.ttf</string>
+	</array>
 </dict>
 </plist>

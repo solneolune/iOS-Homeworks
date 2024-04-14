@@ -36,15 +36,13 @@ class OnboardingVC: BaseVC {
     func styleLabel() {
         titleLabel.textAlignment = .left
         titleLabel.textColor = UIColor(rgb: 0xFFFFFF)
-        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        titleLabel.font = UIFont(name: "FiraGO-Regular", size: 30)
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
-        
-        var paragraphStyle = NSMutableParagraphStyle()
+        let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.33
         titleLabel.attributedText = NSMutableAttributedString(string: "შედი \nაპლიკაციაში \nდა იწუწუნე \nრამდენიც გინდა", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.centerYAnchor),
@@ -73,8 +71,4 @@ class OnboardingVC: BaseVC {
             self.navigationController?.pushViewController(mainVC, animated: true)
         }), for: .touchUpInside)
     }
-}
-
-#Preview {
-    OnboardingVC()
 }

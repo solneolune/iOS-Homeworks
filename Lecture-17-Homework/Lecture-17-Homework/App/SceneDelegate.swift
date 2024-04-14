@@ -18,9 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let launchVC = LaunchScreenVC()
-        let homeVC = ViewController()
         let onboardingVC = OnboardingVC()
-        let newcardVC = NewCardVC()
         
         let nav = UINavigationController(rootViewController: onboardingVC)
         
