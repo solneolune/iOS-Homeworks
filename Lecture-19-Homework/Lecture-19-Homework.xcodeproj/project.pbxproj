@@ -127,13 +127,13 @@
 			isa = PBXGroup;
 			children = (
 				03C2A9982BD3049A006B3155 /* App */,
-				03C2A9992BD304A6006B3155 /* ViewControllers */,
-				035769042BD407B200D9C929 /* Resources */,
 				031AB5652BD3210A00F33C8C /* Cells */,
+				035769022BD3CAA500D9C929 /* Enums */,
 				031AB5682BD3213C00F33C8C /* Extensions */,
 				031AB56B2BD3216A00F33C8C /* Models */,
 				035769012BD3CA9B00D9C929 /* Services */,
-				035769022BD3CAA500D9C929 /* Enums */,
+				035769042BD407B200D9C929 /* Resources */,
+				03C2A9992BD304A6006B3155 /* ViewControllers */,
 			);
 			path = "Lecture-19-Homework";
 			sourceTree = "<group>";
