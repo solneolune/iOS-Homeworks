@@ -16,7 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = ViewController()
+        
+        let homeVC = ViewController()
+        let newsVC = NewsVC()
+        newsVC.title = "უკან"
+        
+        let nav = UINavigationController(rootViewController: homeVC)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 }
