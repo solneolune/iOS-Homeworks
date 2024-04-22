@@ -21,6 +21,8 @@ class DetailsVC: UIViewController {
     let infoTitle = UILabel()
     let linksTitle = UILabel()
     let infoStackView = UIStackView()
+    let openStreetMapIcon = UIImageView()
+    let googleMapIcon = UIImageView()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class DetailsVC: UIViewController {
     // MARK: - Setup and Styling
     func initSetUp() {
         setupScrollView()
+        setupMapIcons()
         initStackView()
         styleImage()
         styleInfoStack()
@@ -54,13 +57,44 @@ class DetailsVC: UIViewController {
     }
     
     func initStackView() {
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        containerView.layer.shadowRadius = 4
+        containerView.layer.shadowOpacity = 0.15
+        
+        styleImage()
+        containerView.addSubview(flagImg)
+        
+        flagImg.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            flagImg.topAnchor.constraint(equalTo: containerView.topAnchor),
+            flagImg.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            flagImg.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            flagImg.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 228)
+        ])
+        
+        let mapsStackView = UIStackView(arrangedSubviews: [openStreetMapIcon, googleMapIcon])
+        mapsStackView.axis = .horizontal
+        mapsStackView.distribution = .fillEqually
+        mapsStackView.alignment = .center
+        mapsStackView.spacing = 10
+        
+        let divider1 = createDivider()
+            let divider2 = createDivider()
+        
         let stackView = UIStackView(arrangedSubviews: [
-            flagImg,
+            containerView,
             flagAltTitle,
             flagAlt,
+            divider1,
             infoTitle,
             infoStackView,
-            linksTitle
+            divider2,
+            linksTitle,
+            mapsStackView
         ])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
@@ -71,14 +105,45 @@ class DetailsVC: UIViewController {
         scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            stackView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor, constant: -32)
         ])
         
         createInfoTable()
+    }
+    
+    func setupMapIcons() {
+        openStreetMapIcon.isUserInteractionEnabled = true
+        googleMapIcon.isUserInteractionEnabled = true
+        
+        openStreetMapIcon.image = UIImage(named: "map1")
+        googleMapIcon.image = UIImage(named: "map2")
+        
+        let tapOSM = UITapGestureRecognizer(target: self, action: #selector(openOpenStreetMap))
+        let tapGoogle = UITapGestureRecognizer(target: self, action: #selector(openGoogleMaps))
+        openStreetMapIcon.addGestureRecognizer(tapOSM)
+        googleMapIcon.addGestureRecognizer(tapGoogle)
+        
+        openStreetMapIcon.contentMode = .scaleAspectFit
+        googleMapIcon.contentMode = .scaleAspectFit
+        openStreetMapIcon.clipsToBounds = false
+        googleMapIcon.clipsToBounds = false
+        openStreetMapIcon.translatesAutoresizingMaskIntoConstraints = false
+        googleMapIcon.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            openStreetMapIcon.widthAnchor.constraint(equalToConstant: 50),
+            openStreetMapIcon.heightAnchor.constraint(equalToConstant: 50),
+            googleMapIcon.widthAnchor.constraint(equalToConstant: 50),
+            googleMapIcon.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    func styleLinksStackView() {
+        
     }
     
     func initData() {
@@ -89,6 +154,7 @@ class DetailsVC: UIViewController {
             flagAlt.text = data.flags.alt
             infoTitle.text = "Basic information:"
             updateInfoTable(with: data)
+            linksTitle.text = "Useful links:"
         } else {
             print("404 not found")
         }
@@ -96,15 +162,8 @@ class DetailsVC: UIViewController {
     
     func styleImage() {
         flagImg.contentMode = .scaleAspectFill
-        flagImg.clipsToBounds = false
+        flagImg.clipsToBounds = true
         flagImg.layer.cornerRadius = 30
-        flagImg.layer.shadowColor = UIColor.black.cgColor
-        flagImg.layer.shadowOffset = CGSize(width: 0, height: 4)
-        flagImg.layer.shadowRadius = 4
-        flagImg.layer.shadowOpacity = 0.15
-        flagImg.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            flagImg.heightAnchor.constraint(equalToConstant: 228)            ])
     }
     
     func styleTitleLabels(_ labels: [UILabel]) {
@@ -173,6 +232,17 @@ class DetailsVC: UIViewController {
         return rowStackView
     }
     
+    func createDivider() -> UIView {
+        let divider = UIView()
+        divider.backgroundColor = .lightGray
+        divider.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            divider.heightAnchor.constraint(equalToConstant: 1)
+        ])
+        return divider
+    }
+
+    
     // MARK: -  Action Functions
     func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
@@ -183,6 +253,17 @@ class DetailsVC: UIViewController {
             }
         }.resume()
     }
+    
+    @objc func openOpenStreetMap() {
+        guard let country = country, let url = URL(string: country.maps.openStreetMaps) else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @objc func openGoogleMaps() {
+        guard let country = country, let url = URL(string: country.maps.googleMaps) else { return }
+        UIApplication.shared.open(url)
+    }
+    
 }
 
 #Preview {
