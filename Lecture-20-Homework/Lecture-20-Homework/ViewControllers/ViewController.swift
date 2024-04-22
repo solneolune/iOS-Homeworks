@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         fetchCountries()
     }
+    
     // MARK: -  Setup and Styling
     func initSetUp() {
         initTable()
@@ -69,7 +70,7 @@ class ViewController: UIViewController {
     }
 }
 
-// MARK: - Table Extension
+    // MARK: - Table Extension
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countriesData.count

@@ -22,6 +22,7 @@ class DetailsVC: UIViewController {
     let linksTitle = UILabel()
     let infoStackView = UIStackView()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -32,11 +33,13 @@ class DetailsVC: UIViewController {
     }
     
     // MARK: - Setup and Styling
-    
     func initSetUp() {
+        setupScrollView()
         initStackView()
         styleImage()
         styleInfoStack()
+        styleTitleLabels([flagAltTitle, infoTitle, linksTitle])
+        styleFlagAltText()
     }
     
     func setupScrollView() {
@@ -56,7 +59,8 @@ class DetailsVC: UIViewController {
             flagAltTitle,
             flagAlt,
             infoTitle,
-            infoStackView
+            infoStackView,
+            linksTitle
         ])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
@@ -92,10 +96,30 @@ class DetailsVC: UIViewController {
     
     func styleImage() {
         flagImg.contentMode = .scaleAspectFill
-        flagImg.clipsToBounds = true
+        flagImg.clipsToBounds = false
         flagImg.layer.cornerRadius = 30
+        flagImg.layer.shadowColor = UIColor.black.cgColor
+        flagImg.layer.shadowOffset = CGSize(width: 0, height: 4)
+        flagImg.layer.shadowRadius = 4
+        flagImg.layer.shadowOpacity = 0.15
+        flagImg.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            flagImg.heightAnchor.constraint(equalToConstant: 228)            ])
     }
     
+    func styleTitleLabels(_ labels: [UILabel]) {
+        for label in labels {
+            label.numberOfLines = 0
+            label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            label.textAlignment = .left
+        }
+    }
+    
+    func styleFlagAltText() {
+        flagAlt.numberOfLines = 0
+        flagAlt.textAlignment = .left
+        flagAlt.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+    }
     
     func styleInfoStack() {
         infoStackView.axis = .vertical
@@ -113,7 +137,7 @@ class DetailsVC: UIViewController {
     
     func updateInfoTable(with country: Country) {
         let nativeName = country.name.nativeName?["kat"]?.official ?? "Unavailable"
-        let spellings = country.altSpellings.joined(separator: ", ") ?? "Unavailable"
+        let spellings = country.altSpellings.joined(separator: ", ")
         let capitals = country.capital?.joined(separator: ", ") ?? "Unavailable"
         let currencies = country.currencies?.map { "\($0.key): \($0.value.name), \($0.value.symbol ?? "No symbol")" }.joined(separator: ", ") ?? "Unavailable"
         let neighbors = country.borders?.joined(separator: ", ") ?? "Unavailable"
@@ -136,11 +160,11 @@ class DetailsVC: UIViewController {
     func createRow(title: String, value: String) -> UIStackView {
         let titleLabel = UILabel()
         titleLabel.text = title
-        titleLabel.font = .systemFont(ofSize: 16)
+        titleLabel.font = .systemFont(ofSize: 14)
         
         let valueLabel = UILabel()
         valueLabel.text = value
-        valueLabel.font = .systemFont(ofSize: 16)
+        valueLabel.font = .systemFont(ofSize: 14)
         valueLabel.textAlignment = .right
         
         let rowStackView = UIStackView(arrangedSubviews: [titleLabel, valueLabel])
@@ -149,10 +173,7 @@ class DetailsVC: UIViewController {
         return rowStackView
     }
     
-    
-    
-    // MARK: - ACTION FUNCTIONS
-    
+    // MARK: -  Action Functions
     func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
@@ -164,8 +185,7 @@ class DetailsVC: UIViewController {
     }
 }
 
-
-
 #Preview {
     DetailsVC()
 }
+
