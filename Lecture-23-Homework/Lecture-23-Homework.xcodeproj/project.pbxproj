@@ -63,10 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				03FA39D12BE449F000BE53E9 /* App */,
+				03FA39E52BE47CBC00BE53E9 /* Scenes */,
 				03FA39D22BE449F900BE53E9 /* Assets */,
-				03FA39D02BE449E300BE53E9 /* Launch */,
 				03FA39CF2BE449DA00BE53E9 /* Resources */,
-				03FA39D62BE4548700BE53E9 /* CatFactsList */,
 			);
 			path = "Lecture-23-Homework";
 			sourceTree = "<group>";
@@ -121,6 +120,15 @@
 				03FA39E22BE46F9A00BE53E9 /* CatFactCell.swift */,
 			);
 			path = CatFactsTableViewCell;
+			sourceTree = "<group>";
+		};
+		03FA39E52BE47CBC00BE53E9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				03FA39D02BE449E300BE53E9 /* Launch */,
+				03FA39D62BE4548700BE53E9 /* CatFactsList */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
