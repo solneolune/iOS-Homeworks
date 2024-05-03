@@ -13,6 +13,9 @@
 		03FA39C82BE4495900BE53E9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 03FA39C72BE4495900BE53E9 /* Base */; };
 		03FA39D42BE44A5700BE53E9 /* CatFactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA39D32BE44A5700BE53E9 /* CatFactsListViewController.swift */; };
 		03FA39DA2BE455A800BE53E9 /* CatFactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA39D92BE455A800BE53E9 /* CatFactModel.swift */; };
+		03FA39DD2BE4614F00BE53E9 /* BarbareDoesNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 03FA39DC2BE4614F00BE53E9 /* BarbareDoesNetworking */; };
+		03FA39E12BE4618800BE53E9 /* CatFactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA39E02BE4618800BE53E9 /* CatFactsListViewModel.swift */; };
+		03FA39E32BE46F9A00BE53E9 /* CatFactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA39E22BE46F9A00BE53E9 /* CatFactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		03FA39C92BE4495900BE53E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03FA39D32BE44A5700BE53E9 /* CatFactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsListViewController.swift; sourceTree = "<group>"; };
 		03FA39D92BE455A800BE53E9 /* CatFactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactModel.swift; sourceTree = "<group>"; };
+		03FA39E02BE4618800BE53E9 /* CatFactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsListViewModel.swift; sourceTree = "<group>"; };
+		03FA39E22BE46F9A00BE53E9 /* CatFactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FA39DD2BE4614F00BE53E9 /* BarbareDoesNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +67,6 @@
 				03FA39D02BE449E300BE53E9 /* Launch */,
 				03FA39CF2BE449DA00BE53E9 /* Resources */,
 				03FA39D62BE4548700BE53E9 /* CatFactsList */,
-				03FA39D92BE455A800BE53E9 /* CatFactModel.swift */,
 			);
 			path = "Lecture-23-Homework";
 			sourceTree = "<group>";
@@ -102,9 +107,20 @@
 		03FA39D62BE4548700BE53E9 /* CatFactsList */ = {
 			isa = PBXGroup;
 			children = (
+				03FA39E42BE46F9D00BE53E9 /* CatFactsTableViewCell */,
+				03FA39D92BE455A800BE53E9 /* CatFactModel.swift */,
 				03FA39D32BE44A5700BE53E9 /* CatFactsListViewController.swift */,
+				03FA39E02BE4618800BE53E9 /* CatFactsListViewModel.swift */,
 			);
 			path = CatFactsList;
+			sourceTree = "<group>";
+		};
+		03FA39E42BE46F9D00BE53E9 /* CatFactsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				03FA39E22BE46F9A00BE53E9 /* CatFactCell.swift */,
+			);
+			path = CatFactsTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +139,9 @@
 			dependencies = (
 			);
 			name = "Lecture-23-Homework";
+			packageProductDependencies = (
+				03FA39DC2BE4614F00BE53E9 /* BarbareDoesNetworking */,
+			);
 			productName = "Lecture-23-Homework";
 			productReference = 03FA39B82BE4495800BE53E9 /* Lecture-23-Homework.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 03FA39AF2BE4495800BE53E9;
+			packageReferences = (
+				03FA39DB2BE4614F00BE53E9 /* XCRemoteSwiftPackageReference "BarbareDoesNetworking" */,
+			);
 			productRefGroup = 03FA39B92BE4495800BE53E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,7 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FA39E12BE4618800BE53E9 /* CatFactsListViewModel.swift in Sources */,
 				03FA39DA2BE455A800BE53E9 /* CatFactModel.swift in Sources */,
+				03FA39E32BE46F9A00BE53E9 /* CatFactCell.swift in Sources */,
 				03FA39BC2BE4495800BE53E9 /* AppDelegate.swift in Sources */,
 				03FA39BE2BE4495800BE53E9 /* SceneDelegate.swift in Sources */,
 				03FA39D42BE44A5700BE53E9 /* CatFactsListViewController.swift in Sources */,
@@ -393,6 +417,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03FA39DB2BE4614F00BE53E9 /* XCRemoteSwiftPackageReference "BarbareDoesNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/solneolune/BarbareDoesNetworking.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03FA39DC2BE4614F00BE53E9 /* BarbareDoesNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03FA39DB2BE4614F00BE53E9 /* XCRemoteSwiftPackageReference "BarbareDoesNetworking" */;
+			productName = BarbareDoesNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 03FA39B02BE4495800BE53E9 /* Project object */;
 }

@@ -7,5 +7,9 @@
 
 struct CatFact: Codable {
     let fact: String
-    let length: Int
+    let length: Int?
+}
+
+struct CatFactsResponse: Codable {
+    let data: [CatFact]
 }
